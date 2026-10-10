@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vistiendo el Futuro | Proyecto Ropa Equipo #6</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            light: '#EFEFEF', // Light Gray
+                            dark: '#070707', // Almost Black
+                            pink: '#D1345B', // Raspberry
+                            blue: '#3454D1', // Blue
+                            teal: '#34D1BF', // Teal
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-nav {
+            background: rgba(239, 239, 239, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(7, 7, 7, 0.9) 0%, rgba(52, 84, 209, 0.8) 100%), url('https://placehold.co/1920x1080/070707/3454d1?text=Comunidad+y+Donaciones') center/cover no-repeat;
+        }
+    </style>
+</head>
+<body class="bg-brand-light text-brand-dark antialiased selection:bg-brand-pink selection:text-white">
+
+<header class="fixed w-full top-0 z-50 glass-nav shadow-sm transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+            <!-- Logo -->
+            <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                <i class="fa-solid fa-shirt text-brand-pink text-3xl"></i>
+                <span class="font-bold text-xl tracking-tight text-brand-dark">Equipo <span class="text-brand-pink">#6</span></span>
+            </div>
+            
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex space-x-8 items-center">
+                <a href="#problema" class="text-sm font-semibold text-brand-dark/80 hover:text-brand-pink transition-colors">El Problema</a>
+                <a href="#solucion" class="text-sm font-semibold text-brand-dark/80 hover:text-brand-pink transition-colors">Nuestra Solución</a>
+                <a href="#impacto" class="text-sm font-semibold text-brand-dark/80 hover:text-brand-pink transition-colors">Impacto (ODS)</a>
+                <a href="#negocio" class="text-sm font-semibold text-brand-dark/80 hover:text-brand-pink transition-colors">Plan de Negocio</a>
+                <a href="#equipo" class="text-sm font-semibold text-brand-dark/80 hover:text-brand-pink transition-colors">Equipo</a>
+                <a href="#solucion" class="bg-brand-pink hover:opacity-90 text-brand-light px-5 py-2 rounded-full font-semibold transition-all shadow-md transform hover:-translate-y-0.5">
+                    Descargar App
+                </a>
+            </nav>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-btn" class="text-brand-dark hover:text-brand-pink focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mobile Nav Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 absolute w-full shadow-lg">
+        <div class="px-4 pt-2 pb-6 space-y-2">
+            <a href="#problema" class="block px-3 py-2 rounded-md text-base font-medium text-brand-dark hover:bg-brand-light hover:text-brand-pink">El Problema</a>
+            <a href="#solucion" class="block px-3 py-2 rounded-md text-base font-medium text-brand-dark hover:bg-brand-light hover:text-brand-pink">Nuestra Solución</a>
+            <a href="#impacto" class="block px-3 py-2 rounded-md text-base font-medium text-brand-dark hover:bg-brand-light hover:text-brand-pink">Impacto (ODS)</a>
+            <a href="#negocio" class="block px-3 py-2 rounded-md text-base font-medium text-brand-dark hover:bg-brand-light hover:text-brand-pink">Plan de Negocio</a>
+            <a href="#equipo" class="block px-3 py-2 rounded-md text-base font-medium text-brand-dark hover:bg-brand-light hover:text-brand-pink">Equipo</a>
+        </div>
+    </div>
+</header>
+
+<section id="hero" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 hero-bg text-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <span class="inline-block py-1 px-3 rounded-full bg-brand-dark/50 border border-brand-teal/30 text-brand-teal text-sm font-semibold mb-6 backdrop-blur-sm">
+            Iniciativa de Economía Circular Social
+        </span>
+        <h1 class="text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight mb-6 drop-shadow-lg">
+            Vistiendo el Futuro:<br/> <span class="text-brand-teal">Un ciclo donde todos ganan</span>
+        </h1>
+        <p class="mt-4 text-lg md:text-2xl text-brand-light/90 max-w-3xl mx-auto font-light drop-shadow-md mb-10">
+            Transformamos la donación de ropa en una experiencia de impacto social. Conectamos tu generosidad con quienes más lo necesitan, cuidando el planeta y recompensando tu ayuda.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="#solucion" class="w-full sm:w-auto px-8 py-4 bg-brand-pink text-white rounded-full font-bold text-lg shadow-xl hover:opacity-90 transition-all transform hover:scale-105 flex items-center justify-center gap-2">
+                <i class="fa-solid fa-qrcode"></i> Descargar App
+            </a>
+            <a href="#equipo" class="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-brand-teal text-brand-teal rounded-full font-bold text-lg shadow-xl hover:bg-brand-teal hover:text-brand-dark transition-all transform hover:scale-105 flex items-center justify-center gap-2">
+                <i class="fa-solid fa-hand-holding-heart"></i> Ser Voluntario
+            </a>
+        </div>
+    </div>
+    <!-- Decorative wave divider -->
+    <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-[60px] md:h-[100px]">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,120.3,200,111.4,242.82,105.8,283.47,82.4,321.39,56.44Z" class="fill-brand-light"></path>
+        </svg>
+    </div>
+</section>
+
+<section id="problema" class="py-20 bg-brand-light pt-28 -mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-brand-blue font-bold tracking-wide uppercase text-sm mb-2">El Problema</h2>
+            <h3 class="text-3xl md:text-4xl font-extrabold text-brand-dark mb-4">La Doble Crisis: Escasez y Desperdicio</h3>
+            <div class="w-24 h-1 bg-brand-pink mx-auto rounded-full"></div>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 flex gap-4 items-start">
+                    <div class="bg-brand-pink/10 p-3 rounded-lg text-brand-pink mt-1">
+                        <i class="fa-solid fa-triangle-exclamation text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-brand-dark mb-2">Falta de Vestimenta Digna</h4>
+                        <p class="text-brand-dark/70">Miles de personas en situación de vulnerabilidad no tienen acceso a ropa adecuada para protegerse del clima, afectando gravemente su calidad de vida, salud y dignidad básica.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 flex gap-4 items-start">
+                    <div class="bg-brand-blue/10 p-3 rounded-lg text-brand-blue mt-1">
+                        <i class="fa-solid fa-dumpster text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-brand-dark mb-2">Desperdicio Textil Masivo</h4>
+                        <p class="text-brand-dark/70">Al mismo tiempo, toneladas de ropa en perfecto estado terminan en vertederos cada año. La industria de la moda genera un problema ecológico masivo que requiere una solución circular urgente.</p>
+                    </div>
+                </div>
+                <p class="text-lg text-brand-dark/80 italic border-l-4 border-brand-teal pl-4 mt-6">
+                    "Nuestra iniciativa nace para construir un puente eficiente entre esta abundancia desperdiciada y la necesidad apremiante."
+                </p>
+            </div>
+            <div class="relative">
+                <div class="absolute inset-0 bg-gradient-to-r from-brand-blue to-brand-teal transform skew-y-3 rounded-3xl -z-10"></div>
+                <img src="https://placehold.co/600x500/efefef/3454d1?text=Problema+Textil+y+Social" alt="Ilustración del problema" class="rounded-2xl shadow-lg w-full object-cover h-[400px]">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="solucion" class="py-20 bg-white pt-28 -mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-brand-teal font-bold tracking-wide uppercase text-sm mb-2">Nuestra Solución</h2>
+            <h3 class="text-3xl md:text-4xl font-extrabold text-brand-dark mb-4">Tecnología y Solidaridad en una App</h3>
+            <p class="text-brand-dark/70 text-lg">Hemos diseñado un ecosistema integral que facilita la donación, optimiza la logística y premia tu compromiso.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Feature 1 -->
+            <div class="bg-brand-light/50 rounded-2xl p-8 hover:shadow-xl transition-shadow border border-gray-100 text-center group">
+                <div class="w-16 h-16 bg-brand-pink/10 text-brand-pink rounded-full flex items-center justify-center mx-auto mb-6 text-2xl group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                </div>
+                <h4 class="text-xl font-bold text-brand-dark mb-3">App y Donativos QR</h4>
+                <p class="text-brand-dark/70 text-sm">Gestiona tus donaciones fácilmente desde tu celular. Genera códigos QR para un seguimiento transparente y rápido de tus prendas.</p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="bg-brand-light/50 rounded-2xl p-8 hover:shadow-xl transition-shadow border border-gray-100 text-center group">
+                <div class="w-16 h-16 bg-brand-blue/10 text-brand-blue rounded-full flex items-center justify-center mx-auto mb-6 text-2xl group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-tags"></i>
+                </div>
+                <h4 class="text-xl font-bold text-brand-dark mb-3">Clasificación Inteligente</h4>
+                <p class="text-brand-dark/70 text-sm">Categorizamos cada prenda por <span class="font-bold text-brand-pink">#Color</span>, <span class="font-bold text-brand-blue">#Talla</span> y <span class="font-bold text-brand-teal">#Forma</span>, asegurando que lleguen a las personas adecuadas.</p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="bg-brand-light/50 rounded-2xl p-8 hover:shadow-xl transition-shadow border border-gray-100 text-center group">
+                <div class="w-16 h-16 bg-brand-teal/10 text-brand-teal rounded-full flex items-center justify-center mx-auto mb-6 text-2xl group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-truck-fast"></i>
+                </div>
+                <h4 class="text-xl font-bold text-brand-dark mb-3">Logística Eficiente</h4>
+                <p class="text-brand-dark/70 text-sm">Trabajamos con <strong>Ayuntamientos</strong>. Ofrecemos entrega en sitio o recolección a domicilio mediante camiones adaptados.</p>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="bg-brand-light/50 rounded-2xl p-8 hover:shadow-xl transition-shadow border border-gray-100 text-center group">
+                <div class="w-16 h-16 bg-brand-pink/10 text-brand-pink rounded-full flex items-center justify-center mx-auto mb-6 text-2xl group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-ticket"></i>
+                </div>
+                <h4 class="text-xl font-bold text-brand-dark mb-3">Incentivos por Donar</h4>
+                <p class="text-brand-dark/70 text-sm">¡Un negocio redondo! Al donar, recibes cupones de descuento (<strong>%</strong>) e incentivos en negocios locales. Ayudas y ahorras.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="impacto" class="py-20 bg-brand-dark text-white pt-28 -mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-brand-teal font-bold tracking-wide uppercase text-sm mb-2">Nuestro Impacto</h2>
+            <h3 class="text-3xl md:text-4xl font-extrabold mb-4">Alineados con la Agenda 2030 (ONU)</h3>
+            <p class="text-brand-light/80 text-lg">Nuestro proyecto no solo resuelve un problema local, sino que contribuye directamente a los Objetivos de Desarrollo Sostenible globales.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- ODS 1 -->
+            <div class="bg-white/5 backdrop-blur rounded-2xl p-8 border border-white/10 hover:border-brand-pink transition-colors">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="bg-brand-pink text-white font-bold w-12 h-12 flex items-center justify-center rounded-lg text-2xl">
+                        1
+                    </div>
+                    <h4 class="text-xl font-bold">Fin de la Pobreza</h4>
+                </div>
+                <p class="text-brand-light/80"><strong>Nuestro objetivo principal.</strong> Trabajamos para reducir la vulnerabilidad proveyendo vestimenta digna, un recurso básico para mejorar la calidad de vida.</p>
+            </div>
+
+            <!-- ODS 12 -->
+            <div class="bg-white/5 backdrop-blur rounded-2xl p-8 border border-white/10 hover:border-brand-teal transition-colors">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="bg-brand-teal text-brand-dark font-bold w-12 h-12 flex items-center justify-center rounded-lg text-2xl">
+                        12
+                    </div>
+                    <h4 class="text-xl font-bold">Consumo Responsable</h4>
+                </div>
+                <p class="text-brand-light/80">Fomentamos la economía circular promoviendo el reciclaje y reuso de ropa. Extendemos la vida útil de los textiles y combatimos el 'fast fashion'.</p>
+            </div>
+
+            <!-- ODS 17 -->
+            <div class="bg-white/5 backdrop-blur rounded-2xl p-8 border border-white/10 hover:border-brand-blue transition-colors">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="bg-brand-blue text-white font-bold w-12 h-12 flex items-center justify-center rounded-lg text-2xl">
+                        17
+                    </div>
+                    <h4 class="text-xl font-bold">Alianzas para los Objetivos</h4>
+                </div>
+                <p class="text-brand-light/80">No podemos hacerlo solos. Colaboramos con el Gobierno, Sector Privado y la Sociedad Civil para multiplicar el impacto.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="negocio" class="py-20 bg-brand-light pt-28 -mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-brand-blue font-bold tracking-wide uppercase text-sm mb-2">Esquema Sostenible</h2>
+            <h3 class="text-3xl md:text-4xl font-extrabold text-brand-dark mb-4">Plan de Negocio a Profundidad</h3>
+            <div class="w-24 h-1 bg-brand-pink mx-auto rounded-full mb-6"></div>
+            <p class="text-brand-dark/70">Diseñado para maximizar el impacto social manteniendo una viabilidad financiera robusta a través de alianzas estratégicas.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-6">
+            <!-- Left Col -->
+            <div class="space-y-6">
+                <!-- Socios -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-brand-blue">
+                    <h4 class="font-bold text-lg mb-3 text-brand-dark"><i class="fa-solid fa-handshake text-brand-blue mr-2"></i> Socios Clave</h4>
+                    <ul class="list-disc list-inside text-sm text-brand-dark/70 space-y-1">
+                        <li>Hacienda y Crédito Público (SHCP)</li>
+                        <li>Secretaría de Bienestar</li>
+                        <li>Sistema Nacional DIF</li>
+                        <li>Comunidades Locales</li>
+                        <li>Diseñadores Web / Tech</li>
+                    </ul>
+                </div>
+                <!-- Actividades -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-brand-teal">
+                    <h4 class="font-bold text-lg mb-3 text-brand-dark"><i class="fa-solid fa-gears text-brand-teal mr-2"></i> Actividades y Recursos</h4>
+                    <ul class="list-disc list-inside text-sm text-brand-dark/70 space-y-1 mb-3">
+                        <li>Reciclaje y clasificación de ropa</li>
+                        <li>Gestión de App e incentivos</li>
+                    </ul>
+                    <p class="text-sm font-semibold text-brand-dark border-t pt-2 mt-2">Recursos Clave: <span class="font-normal">Donadores y Red de Voluntariado.</span></p>
+                </div>
+            </div>
+
+            <!-- Center Col -->
+            <div class="space-y-6 lg:mt-8">
+                <!-- Propuesta de Valor -->
+                <div class="bg-brand-dark text-white p-8 rounded-2xl shadow-lg relative overflow-hidden border border-white/10">
+                    <div class="absolute -right-4 -top-4 opacity-10 text-9xl text-brand-pink"><i class="fa-solid fa-gem"></i></div>
+                    <h4 class="font-bold text-2xl mb-4 relative z-10">Propuesta de Valor</h4>
+                    <ul class="space-y-3 relative z-10 text-brand-light">
+                        <li class="flex gap-2"><i class="fa-solid fa-check-circle mt-1 text-brand-teal"></i> <span><strong>Negocio Redondo:</strong> Donatarios y donantes se benefician mutuamente.</span></li>
+                        <li class="flex gap-2"><i class="fa-solid fa-check-circle mt-1 text-brand-teal"></i> <span><strong>Conveniencia:</strong> Facilidad de ubicaciones.</span></li>
+                        <li class="flex gap-2"><i class="fa-solid fa-check-circle mt-1 text-brand-teal"></i> <span><strong>Flexibilidad:</strong> Entrega en sitio (Ayuntamiento) o a domicilio.</span></li>
+                    </ul>
+                </div>
+                <!-- Relación y Segmentos -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-brand-pink">
+                    <h4 class="font-bold text-lg mb-2 text-brand-dark">Segmentos de Mercado</h4>
+                    <p class="text-sm text-brand-dark/70 mb-3">Particulares (Usuarios App), Asociaciones civiles, Empresas.</p>
+                    <h4 class="font-bold text-lg mb-2 text-brand-dark">Relación con Clientes</h4>
+                    <p class="text-sm text-brand-dark/70">Trato directo, humano y Cara a Cara.</p>
+                </div>
+            </div>
+
+            <!-- Right Col -->
+            <div class="space-y-6">
+                <!-- Estructura de Costes -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-brand-pink">
+                    <h4 class="font-bold text-lg mb-3 text-brand-dark"><i class="fa-solid fa-calculator text-brand-pink mr-2"></i> Estructura de Costes</h4>
+                    <ul class="text-sm text-brand-dark/70 space-y-2">
+                        <li class="flex justify-between border-b pb-1"><span>Transporte</span> <span class="font-mono text-brand-dark">$30,000/año</span></li>
+                        <li class="flex justify-between border-b pb-1"><span>Fondo Incentivos</span> <span class="font-mono text-brand-dark">$60,000/año</span></li>
+                        <li class="flex justify-between pb-1"><span>Marketing</span> <span class="font-mono text-brand-dark">$18K-$24K/año</span></li>
+                    </ul>
+                </div>
+                <!-- Ingresos -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-brand-blue">
+                    <h4 class="font-bold text-lg mb-3 text-brand-dark"><i class="fa-solid fa-sack-dollar text-brand-blue mr-2"></i> Fuentes de Ingresos</h4>
+                    <p class="text-xs text-brand-dark/50 mb-3">Modelo basado en tarifas y patrocinios sociales:</p>
+                    <ul class="text-sm text-brand-dark/70 space-y-3">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-heart text-brand-pink mt-1"></i>
+                            <div><strong>Donaciones Base:</strong><br>Aportaciones mínimas de $5,000</div>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-star text-brand-teal mt-1"></i>
+                            <div><strong>Celebridades:</strong><br>Ej. Canelo ($1M), Maná ($500K)</div>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-building text-brand-blue mt-1"></i>
+                            <div><strong>Corporativos:</strong><br>Rango de $150K a $500K</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="equipo" class="py-20 bg-white pt-28 -mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-brand-pink font-bold tracking-wide uppercase text-sm mb-2">Conoce a las mentes detrás del proyecto</h2>
+            <h3 class="text-3xl md:text-4xl font-extrabold text-brand-dark mb-4">Equipo #6</h3>
+            <p class="text-brand-dark/70">Un grupo multidisciplinario comprometido con cambiar el mundo, una prenda a la vez.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Member 1 -->
+            <div class="bg-brand-light/50 rounded-2xl overflow-hidden hover:shadow-xl transition-shadow text-center group">
+                <img src="https://placehold.co/400x400/d1345b/efefef?text=Naomi" alt="Naomi Elizabeth" class="w-full h-56 object-cover grayscale group-hover:grayscale-0 transition-all duration-300">
+                <div class="p-6">
+                    <h4 class="font-bold text-lg text-brand-dark">Juárez Franco</h4>
+                    <p class="text-brand-pink font-medium mb-1">Naomi Elizabeth</p>
+                    <p class="text-xs text-brand-dark/50">Cofundadora / Estrategia</p>
+                </div>
+            </div>
+            
+            <!-- Member 2 -->
+            <div class="bg-brand-light/50 rounded-2xl overflow-hidden hover:shadow-xl transition-shadow text-center group">
+                <img src="https://placehold.co/400x400/3454d1/efefef?text=Densel" alt="Densel Mauricio" class="w-full h-56 object-cover grayscale group-hover:grayscale-0 transition-all duration-300">
+                <div class="p-6">
+                    <h4 class="font-bold text-lg text-brand-dark">Alfaro Vergara</h4>
+                    <p class="text-brand-blue font-medium mb-1">Densel Mauricio</p>
+                    <p class="text-xs text-brand-dark/50">Cofundador / Finanzas</p>
+                </div>
+            </div>
+
+            <!-- Member 3 -->
+            <div class="bg-brand-light/50 rounded-2xl overflow-hidden hover:shadow-xl transition-shadow text-center group">
+                <img src="https://placehold.co/400x400/34d1bf/070707?text=Evolet" alt="Evolet Alise" class="w-full h-56 object-cover grayscale group-hover:grayscale-0 transition-all duration-300">
+                <div class="p-6">
+                    <h4 class="font-bold text-lg text-brand-dark">Trejo Ornelas</h4>
+                    <p class="text-brand-teal font-medium mb-1">Evolet Alise</p>
+                    <p class="text-xs text-brand-dark/50">Cofundadora / Operaciones</p>
+                </div>
+            </div>
+
+            <!-- Member 4 -->
+            <div class="bg-brand-light/50 rounded-2xl overflow-hidden hover:shadow-xl transition-shadow text-center group">
+                <img src="https://placehold.co/400x400/070707/efefef?text=Diana" alt="Diana Elizabeth" class="w-full h-56 object-cover grayscale group-hover:grayscale-0 transition-all duration-300">
+                <div class="p-6">
+                    <h4 class="font-bold text-lg text-brand-dark">Mejía Ramos</h4>
+                    <p class="text-brand-dark font-medium mb-1">Diana Elizabeth</p>
+                    <p class="text-xs text-brand-dark/50">Cofundadora / Relaciones</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-brand-dark text-brand-light/60 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8 mb-8 border-b border-brand-light/10 pb-8">
+            <div class="col-span-2">
+                <div class="flex items-center gap-2 mb-4">
+                    <i class="fa-solid fa-shirt text-brand-pink text-2xl"></i>
+                    <span class="font-bold text-xl tracking-tight text-white">Equipo <span class="text-brand-pink">#6</span></span>
+                </div>
+                <p class="text-sm max-w-sm mb-4">
+                    Transformando la donación de ropa en una experiencia de impacto social, apoyando el ODS #1 (Fin de la Pobreza) mediante un modelo de negocio circular.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-brand-light/60 hover:text-brand-teal transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+                    <a href="#" class="text-brand-light/60 hover:text-brand-blue transition-colors"><i class="fa-brands fa-facebook text-xl"></i></a>
+                    <a href="#" class="text-brand-light/60 hover:text-brand-pink transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Enlaces Rápidos</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#problema" class="hover:text-brand-teal transition-colors">El Problema</a></li>
+                    <li><a href="#solucion" class="hover:text-brand-teal transition-colors">La App / Solución</a></li>
+                    <li><a href="#impacto" class="hover:text-brand-teal transition-colors">Impacto ODS</a></li>
+                    <li><a href="#negocio" class="hover:text-brand-teal transition-colors">Plan de Negocio</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Legal & Ayuda</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white transition-colors">Contacto</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Términos y Condiciones</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Aviso de Privacidad</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Ubicaciones del Ayuntamiento</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="text-center text-sm">
+            <p>&copy; 2026 Proyecto Ropa - Equipo #6. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navbar = document.getElementById('navbar');
+        
+        // Toggle mobile menu
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Header style on scroll
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.remove('shadow-sm');
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.add('shadow-sm');
+                navbar.style.background = 'rgba(255, 255, 255, 0.9)';
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
